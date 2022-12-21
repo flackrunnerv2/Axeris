@@ -141,17 +141,26 @@ function lib:Window(text, preset, closebind)
     MakeDraggable(DragFrame, Main)
 
     local uitoggled = false
+    local cantoggle = true
+    
     UserInputService.InputBegan:Connect(
         function(io, p)
             if io.KeyCode == CloseBind then
                 if uitoggled == false then
+                if cantoggle == true then
                     Main.Size = UDim2.new(0, 0, 0, 0)
-                    uitoggled = true
+                    uitoggled = false
                     knixhub.Enabled = false
+                    task.wait(.25)
+                    cantoggle = true
                 else
+                if uitoggled == false then
+                if cantoggle == true then
                 Main.Size = UDim2.new(0, 560, 0, 319)
                     knixhub.Enabled = true
                     uitoggled = false
+                    task.wait(.25)
+                    cantoggle = true
                 end
             end
         end
