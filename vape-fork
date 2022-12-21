@@ -147,7 +147,6 @@ function lib:Window(text, preset, closebind)
                 if uitoggled == false then
                     Main.Size = UDim2.new(0, 0, 0, 0)
                     uitoggled = true
-                    wait(.5)
                     knixhub.Enabled = false
                 else
                 Main.Size = UDim2.new(0, 560, 0, 319)
